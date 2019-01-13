@@ -1,3 +1,4 @@
+#!/bin/bash
 #add sudo user
 read -p "enter username" username
 adduser $username
