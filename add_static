@@ -1,3 +1,4 @@
+#!/bin/bash
 #change to static
 echo "enter the static ip you want"
 read newip
