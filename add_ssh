@@ -5,5 +5,5 @@ touch /home/$1/.ssh/authorized_keys
 IP=`ip a | grep "inet " | tail -1 | awk '{print $2}' | cut -d / -f1`
 read -p "connect via ssh to $IP and copy your ssh key in /home/$1/.ssh/authorized_keys then press enter" key
 read -p "enter the ssh port you want : " ssh_port
-echo -e "port $ssh_port\nPermitRootLogin no\nPubkeyAuthentication yes\nPasswordAuthentication no\nHostbasedAuthentication no\nChallengeResponseAuthentication no\nKerberosAuthentication no\nGSSAPIAuthentication no\nUsePAM yes\nX11Forwarding yes\nPrintMotd no\nAcceptEnv LANG LC_*" > /etc/ssh/sshd_config
+echo -e "port $ssh_port\nPermitRootLogin no\nRSAAuthentication yes\nPubkeyAuthentication yes\nPasswordAuthentication no\nHostbasedAuthentication no\nChallengeResponseAuthentication no\nKerberosAuthentication no\nGSSAPIAuthentication no\nUsePAM yes\nX11Forwarding yes\nPrintMotd no\nAcceptEnv LANG LC_*" > /etc/ssh/sshd_config
 systemctl restart sshd
