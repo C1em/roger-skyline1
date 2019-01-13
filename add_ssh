@@ -1,9 +1,9 @@
 #!/bin/bash
 #add ssh
-mkdir /home/$username/.ssh
-touch /home/$username/.ssh/authorized_keys
+mkdir /home/$1/.ssh
+touch /home/$1/.ssh/authorized_keys
 IP='ip a | grep “inet “ | tail -1 | awk ‘{print $2}’ | cut -d / -f1`
-read -p "connect via ssh to $IP and copy your ssh key in /home/$username/.ssh/authorized_keys then press any key" key
+read -p "connect via ssh to $IP and copy your ssh key in /home/$1/.ssh/authorized_keys then press any key" key
 read -p "enter the ssh port you want" ssh_port
 echo -e "port 1024\nPermitRootLogin no\nPubkeyAuthentication yes\nPasswordAuthentication no\nHostbasedAuthentication no\nChallengeResponseAuthentication no\nKerberosAuthentication no\nGSSAPIAuthentication no\nUsePAM yes\nX11Forwarding yes\nPrintMotd no\nAcceptEnv LANG LC_*\n" > /etc/ssh/sshd_config
 systemctl restart sshd
