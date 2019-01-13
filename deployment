@@ -1,5 +1,5 @@
 #!/bin/bash
-sh ./add_user
-sh ./add_ssh
-sh ./add_static
-sh ./add_iptables
+sh /script/add_user
+sh /script/add_ssh
+sh /script/add_static
+sh /script/add_iptables
