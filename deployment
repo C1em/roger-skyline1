@@ -1,0 +1,5 @@
+#!/bin/bash
+sh ./add_user
+sh ./add_ssh
+sh ./add_static
+sh ./add_iptables
