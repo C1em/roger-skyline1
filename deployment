@@ -1,5 +1,5 @@
 #!/bin/bash
-read -p "enter username" username
+read -p "enter username : " username
 sh /script/add_user $username
 sh /script/add_ssh $username
 sh /script/add_static
