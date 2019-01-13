@@ -1,5 +1,4 @@
 #!/bin/bash
 #add sudo user
-read -p "enter username" username
-adduser $username
-usermod -aG sudo $username
+adduser $1
+usermod -aG sudo $1
