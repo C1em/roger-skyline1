@@ -1,0 +1,5 @@
+#add sudo user
+echo "enter username"
+read username
+adduser $username
+usermod -aG sudo $username
