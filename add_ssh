@@ -1,3 +1,4 @@
+#!/bin/bash
 #add ssh
 mkdir /home/$username/.ssh
 touch /home/$username/.ssh/authorized_keys
