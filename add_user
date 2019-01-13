@@ -1,5 +1,4 @@
 #add sudo user
-echo "enter username"
-read username
+read -p "enter username" username
 adduser $username
 usermod -aG sudo $username
