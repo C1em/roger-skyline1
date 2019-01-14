@@ -1,6 +1,5 @@
 #!/bin/bash
 #add ssh
-IP=`ip a | grep "inet " | tail -1 | awk '{print $2}' | cut -d / -f1`
 read -p "enter the ssh port you want : " ssh_port
 echo "port $ssh_port\nPermitRootLogin no\nRSAAuthentication yes\nPubkeyAuthentication yes\nPasswordAuthentication no\nHostbasedAuthentication no\nChallengeResponseAuthentication no\nKerberosAuthentication no\nGSSAPIAuthentication no\nUsePAM yes\nX11Forwarding yes\nPrintMotd no\nAcceptEnv LANG LC_*" > /etc/ssh/sshd_config
 systemctl restart sshd
