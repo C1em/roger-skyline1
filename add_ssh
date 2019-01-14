@@ -1,5 +1,5 @@
 #!/bin/bash
 #add ssh
 read -p "enter the ssh port you want : " ssh_port
-echo "port $ssh_port\nPermitRootLogin no\nRSAAuthentication yes\nPubkeyAuthentication yes\nPasswordAuthentication no\nHostbasedAuthentication no\nChallengeResponseAuthentication no\nKerberosAuthentication no\nGSSAPIAuthentication no\nUsePAM yes\nX11Forwarding yes\nPrintMotd no\nAcceptEnv LANG LC_*" > /etc/ssh/sshd_config
+echo "port $ssh_port\nPermitRootLogin no\nPubkeyAuthentication yes\nPasswordAuthentication no\nHostbasedAuthentication no\nChallengeResponseAuthentication no\nKerberosAuthentication no\nGSSAPIAuthentication no\nUsePAM yes\nX11Forwarding yes\nPrintMotd no\nAcceptEnv LANG LC_*" > /etc/ssh/sshd_config
 systemctl restart sshd
