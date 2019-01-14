@@ -1,4 +1,3 @@
 #!/bin/bash
 #add sudo user
-adduser $1
 usermod -aG sudo $1
