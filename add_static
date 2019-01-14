@@ -3,4 +3,5 @@
 read -p "enter the static ip you want : " newip
 read -p "enter your default gateway : " gateway
 echo "source /etc/network/interfaces.d/*\n\n# The loopback network interface\nauto lo\niface lo inet loopback\n\n# The primary network interface\nallow-hotplug enp0s3\niface enp0s3 inet static\naddress $newip\nnetmask 255.255.255.252\ngateway $gateway\ndns-nameservers 1.1.1.1 1.0.0.1" > /etc/network/interfaces 
+ip a flush enp0s3
 systemctl restart networking
