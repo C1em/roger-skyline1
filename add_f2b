@@ -1,13 +1,14 @@
 !#/bin/bash
 echo "[sshd]
 enabled = true
-port = 2222
+port = $1
 maxretry = 5
 findtime = 10
 bantime = 1200
 
 [sshd-ddos]
 enabled = true
+port = $1
 maxretry = 5
 findtime = 10
 bantime = 1200
