@@ -4,3 +4,4 @@ read -p "enter ssh port :" ssh_port
 sh /script/add_ssh $ssh_port
 sh /script/add_static
 sh /script/add_iptables $ssh_port
+sh /script/add_f2b
