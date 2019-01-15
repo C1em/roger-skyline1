@@ -1,0 +1,29 @@
+!#/bin/bash
+echo "[sshd]
+enabled = true
+port = 2222
+maxretry = 5
+findtime = 10
+bantime = 1200
+
+[sshd-ddos]
+enabled = true
+maxretry = 5
+findtime = 10
+bantime = 1200
+
+[nginx-http-auth]
+enabled = true
+port = 80,443
+maxretry = 5
+findtime = 10
+bantime = 1200
+
+[nginx-botsearch]
+enabled = true
+port = 80,443
+
+[nginx-limit-req]
+enabled = true
+port = 80,443" > /etc/fail2ban/jail.d/defaults-debian.conf
+systemctl restart fail2ban
