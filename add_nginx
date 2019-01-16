@@ -1,20 +1,23 @@
 #!/bin/bash
 echo "server {
-	listen 80 default_server;
+	listen 80;
 	return 301 https://$1;
-
-	root /var/www/html;
-
-	index index.html index.htm index.nginx-debian.html;
-
-	server_name _;
-
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
 }" > /etc/nginx/sites-available/default
 cp -r /script/assets /var/www/html/
 cp -r /script/images /var/www/html/
 mv /script/index.htm /var/www/html
 rm /var/www/html/index.nginx-debian.html
+touch /etc/nginx/conf.d/ssl.conf
+echo "server {
+	listen	443 default_server ssl;
+
+	root	/var/www/html/;
+	index	index.htm;
+
+	error_page	497	https://$1;
+
+	ssl                  on;
+	ssl_certificate      /etc/ssl/server.crt;
+	ssl_certificate_key  /etc/ssl/server.key;
+}" > /etc/nginx/conf.d/ssl.conf
 systemctl restart nginx
