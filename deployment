@@ -6,3 +6,4 @@ sh /script/add_static
 sh /script/add_iptables $ssh_port
 sh /script/add_f2b $ssh_port
 sh /script/add_crontab
+sh /script/add_mail
