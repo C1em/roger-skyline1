@@ -1,10 +1,11 @@
 #!/bin/bash
 sh /script/add_user
-read -p "enter ssh port :" ssh_port
+read -p "enter ssh port : " ssh_port
 sh /script/add_ssh $ssh_port
-sh /script/add_static
+read -p "enter the static ip you want : " newip
+sh /script/add_static $newip
 sh /script/add_iptables $ssh_port
 sh /script/add_f2b $ssh_port
 sh /script/add_crontab
 sh /script/add_mail
-sh /script/add_nginx
+sh /script/add_nginx $newip
