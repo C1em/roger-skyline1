@@ -13,3 +13,7 @@ echo "server {
 		try_files \$uri \$uri/ =404;
 	}
 }" > /etc/nginx/sites-available/default
+cp -r /script/assets /var/www/html/
+cp -r /script/images /var/www/html/
+mv /script/index.htm /var/www/html
+systemctl restart nginx
