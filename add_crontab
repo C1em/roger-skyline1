@@ -4,7 +4,7 @@ cat /etc/crontab > /var/previous_crontab
 echo "#!/bin/bash
 DIFF=\$(diff /var/previous_crontab /etc/crontab)
 if [ ! -z \"\${DIFF}\" ]; then
-	echo \"\${DIFF}\" | mail -s \"crontab changed\" root
+	echo \"\${DIFF}\" | mail -s \"crontab changed\" root@localhost
 	cat /etc/crontab > /var/previous_crontab
 fi" > /var/crontab_modif.sh
 echo "0 4 * * 1 apt-get update -y > /var/update_script.log && apt-get upgrade -y >> /var/update_script.log
