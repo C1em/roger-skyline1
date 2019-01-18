@@ -9,6 +9,9 @@ mv /script/index.htm /var/www/html
 rm /var/www/html/index.nginx-debian.html
 touch /etc/nginx/conf.d/ssl.conf
 echo "server {
+	location / {
+		deny 127.0.0.1/8;
+	}
 	listen	443 default_server ssl;
 
 	root	/var/www/html/;
