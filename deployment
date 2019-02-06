@@ -6,6 +6,7 @@ read -p "enter the static ip you want : " newip
 sh /script/add_static $newip
 sh /script/add_iptables $ssh_port
 sh /script/add_f2b $ssh_port
+sh /script/add_portsentry
 sh /script/add_crontab
 sh /script/add_mail
 sh /script/add_ssl
