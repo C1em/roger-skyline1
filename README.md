@@ -1,5 +1,8 @@
 # roger-skyline1
 
+This project is an introduction to adminsys.
+This is a server deployment script for debian on a VM.
+
 copy your ssh key to the server using : ssh-copy-id username@ip
 
 Connect into ssh to root user then copy past :
